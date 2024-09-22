@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz Competition 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-800 bg-gray-800">
+    <!-- Header Section -->
+    <header class="bg-black text-white p-6 shadow-md">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <!-- Logo and Title in a column on small screens, row on larger screens -->
+          <div class="flex items-center flex-col lg:flex-row">
+            <!-- Logo -->
+            <img
+              src="./static/drone_robotics_club.jpeg"
+              alt="Logo"
+              class="w-[80px] lg:w-[150px] h-auto mb-2 lg:mb-0 mr-0 lg:mr-4"
+            />
+            <!-- Title and description in column layout -->
+            <div class="text-center lg:text-left">
+              <h1 class="text-2xl lg:text-3xl font-bold">
+                Quiz Competition 2024
+              </h1>
+              <p class="text-md lg:text-xl mt-1 lg:mt-2 italic">
+                Test your knowledge and compete for the crown!
+              </p>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Toggle Button (aligned to right on mobile) -->
+          <button
+            id="menu-toggle"
+            class="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-yellow-300 ml-auto"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- Navigation -->
+        <nav
+          id="menu"
+          class="hidden justify-center items-center space-y-4 lg:space-y-0 md:space-y-2 lg:flex lg:items-center lg:space-x-6 w-full lg:w-auto lg:justify-end mt-4 lg:mt-0"
+        >
+          <a
+            href="#guidelines"
+            class="text-white hover:text-yellow-300 block lg:inline-block transition-colors duration-300"
+          >
+            Guidelines
+          </a>
+          <a
+            href="#methodology"
+            class="text-white hover:text-yellow-300 block lg:inline-block transition-colors duration-300"
+          >
+            Methodology
+          </a>
+          <a
+            href="#mentors"
+            class="text-white hover:text-yellow-300 block lg:inline-block transition-colors duration-300"
+          >
+            Mentors and Coordinators
+          </a>
+          <!-- Updated Golden Button with Shadow -->
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScCLETJ_bO-1WDxD7VqKIyZJnzXH-XRf_qJMUB4Ioy_7_61Sw/viewform?usp=sf_link"
+            class="bg-yellow-500 text-black py-2 px-4 rounded-lg shadow-lg hover:bg-yellow-400 block lg:inline-block transition-colors duration-300"
+          >
+            Register Now
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Competition Image Section -->
+    <div class="w-full py-6">
+      <div
+        class="w-[100%] lg:w-[80%] md:w-[80%] sm:w-[100%] mx-auto flex justify-center items-center flex-col lg:flex-row md:flex-col sm:flex-col rounded-md overflow-hidden"
+      >
+        <!-- Left Image Section -->
+        <div
+          class="flex-shrink-0 h-[350px] lg:h-[400px] md:h-[350px] sm:h-[350px] overflow-hidden group relative"
+        >
+          <img
+            src="./static/competition_image.jpeg"
+            alt="Competition Image"
+            class="h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+          />
+          <!-- Overlay for Image Hover Effect -->
+          <div
+            class="absolute z-10 inset-0 bg-black bg-opacity-30 transition-opacity duration-500 ease-in-out group-hover:bg-opacity-50"
+          ></div>
+        </div>
+        <!-- Right Content Section -->
+        <div
+          class="h-[350px] lg:h-[400px] md:h-[350px] sm:h-[350px] flex flex-col justify-center items-start bg-gray-800 p-8 text-white"
+        >
+          <h2
+            class="text-3xl sm:text-4xl md:text-4xl lg:text-6xl font-bold mb-4"
+          >
+            Join the Ultimate Quiz Competition
+          </h2>
+          <p class="text-2xl mb-8">
+            Challenge yourself and compete for the crown!
+          </p>
+          <!-- Call to Action Button -->
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScCLETJ_bO-1WDxD7VqKIyZJnzXH-XRf_qJMUB4Ioy_7_61Sw/viewform?usp=sf_link"
+            class="bg-yellow-500 text-black py-3 px-8 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors duration-300"
+          >
+            Register Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Showcase Section -->
+    <section class="bg-gray-100 py-12">
+      <div class="container mx-auto text-center px-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8">
+          Event Showcase
+        </h2>
+
+        <!-- Video Container -->
+        <div
+          class="w-[200px] h-auto lg:w-[300px] md:w-[250px] mx-auto relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
+          <!-- Video (Responsive Size) -->
+          <video id="eventVideo" class="w-full h-auto rounded-lg" controls>
+            <source src="./static/event.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Play/Pause Overlay -->
+          <div
+            id="videoOverlay"
+            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-100 transition-opacity duration-300 cursor-pointer"
+          >
+            <i
+              id="playPauseIcon"
+              class="bx bx-play-circle text-white text-5xl sm:text-6xl"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p class="mt-4 text-md sm:text-lg text-gray-600">
+          Watch the highlight of our latest event and experience the energy!
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Section -->
+    <main class="w-full mx-auto space-y-16">
+      <!-- Competition Guidelines -->
+      <div
+        id="guidelines"
+        class="w-[90%] md:w-[80%] mx-auto bg-gray-100 p-6 md:p-8 rounded-lg shadow-lg mt-10"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold text-indigo-600 text-center border-b-4 border-indigo-500 pb-4"
+        >
+          Competition Guidelines
+        </h2>
+
+        <ul class="mt-8 space-y-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Mobile Phones Guideline -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bxs-mobile text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Mobile Phones:</strong> Phones
+              must be turned off and submitted to staff upon arrival. No
+              electronic devices are allowed during the competition.
+            </div>
+          </li>
+          <!-- Arrival Time Guideline -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bxs-time text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Arrival Time:</strong> Teams must
+              arrive before the reporting time; latecomers will be disqualified.
+            </div>
+          </li>
+          <!-- Start Time -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bx-time text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Start Time:</strong> Competition
+              starts at 11:00 AM sharp. Be on time to avoid disqualification.
+            </div>
+          </li>
+          <!-- Scoring -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bxs-bar-chart-alt-2 text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Scoring:</strong> Each question is
+              worth 1 point. No negative marking for the first three wrong
+              answers. From the fourth incorrect answer onward, 1 point will be
+              deducted for each wrong response.
+            </div>
+          </li>
+          <!-- Mode -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bx-child text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Mode:</strong> The competition is
+              offline, and all participants must attend in person.
+            </div>
+          </li>
+          <!-- Identification -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bxs-user-circle text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Identification:</strong>
+              Participants must wear their uniforms and carry ID cards.
+            </div>
+          </li>
+          <!-- Tie-Breaker -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bx-reflect-vertical text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Tie-Breaker:</strong> An extra
+              question will be used to break ties.
+            </div>
+          </li>
+          <!-- Lunch -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bxs-bowl-rice text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Lunch:</strong> No scheduled lunch
+              break; manage your time accordingly.
+            </div>
+          </li>
+          <!-- Conduct -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bx-street-view text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Conduct:</strong> Cheating or
+              misconduct will lead to disqualification. Maintain sportsmanship.
+            </div>
+          </li>
+          <!-- Jury Decision -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bxs-brain text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Jury Decision:</strong> The jury’s
+              decisions are final and binding.
+            </div>
+          </li>
+          <!-- Equipment -->
+          <li
+            class="flex items-start space-x-4 hover:bg-gray-200 p-2 rounded transition"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-full border-2 border-indigo-500 flex items-center justify-center"
+            >
+              <i class="bx bx-calculator text-indigo-600"></i>
+            </div>
+            <div class="max-w-lg">
+              <strong class="text-indigo-700">Equipment:</strong> No personal
+              devices are allowed; organizers will provide necessary materials.
+            </div>
+          </li>
+        </ul>
+
+        <!-- <div class="mt-10 text-center">
+          <button
+            class="bg-indigo-600 text-white text-lg font-medium px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105"
+          >
+            Start your 14-day trial
+          </button>
+        </div> -->
+      </div>
+
+      <!-- Quiz Competition Methodology -->
+      <div
+        id="methodology"
+        class="w-[90%] md:w-[80%] mx-auto bg-white p-6 md:p-8 rounded-lg shadow-xl mt-10"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold text-indigo-600 text-center border-b-4 border-indigo-500 pb-4"
+        >
+          Quiz Competition Methodology
+        </h2>
+        <ul
+          class="list-disc pl-6 text-md md:text-lg text-gray-700 grid grid-cols-1 md:grid-cols-2 gap-6 mt-6"
+        >
+          <!-- Team Composition -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Team Composition:</strong> Teams
+            consist of 2-3 members.
+          </li>
+          <!-- Team Registration -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Team Registration:</strong> Teams will
+            receive a number based on their registration.
+          </li>
+          <!-- Competition Structure -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Competition Structure:</strong>
+            <ul class="list-decimal pl-6 space-y-2">
+              <li>
+                <strong>First Round:</strong> Three parts, each consisting of 20
+                questions. The top 2 teams from each part will advance to the
+                final round.
+              </li>
+              <li>
+                <strong>Final Round:</strong> The final round will determine the
+                winner, first runner-up, and second runner-up.
+              </li>
+            </ul>
+          </li>
+          <!-- Rounds Schedule -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Rounds Schedule:</strong>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Part 1:</strong> 11:00 AM - 11:45 AM</li>
+              <li><strong>Part 2:</strong> 12:00 PM - 12:45 PM</li>
+              <li><strong>Part 3:</strong> 1:00 PM - 1:45 PM</li>
+              <li><strong>Final Round:</strong> 2:15 PM - 3:00 PM</li>
+            </ul>
+          </li>
+          <!-- Question Types -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Question Types:</strong> A mix of
+            multiple-choice and true/false questions. Some rounds may include
+            audio-visual questions.
+          </li>
+          <!-- Answering Questions -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Answering Questions:</strong> Teams
+            must press a buzzer to answer. The first team to buzz will get 30
+            seconds to respond.
+          </li>
+          <!-- Scoring -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Scoring:</strong> Correct answers are
+            worth 1 point. No negative marking for the first two wrong answers,
+            but a deduction of 1 point for subsequent incorrect answers.
+          </li>
+          <!-- Tie-Breaker -->
+          <li class="hover:bg-blue-50 p-2 rounded transition">
+            <strong class="text-blue-800">Tie-Breaker:</strong> In the event of
+            a tie, a special question will be given, and the jury will decide
+            the winner based on the correct answer.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Register Section -->
+      <section
+        id="register"
+        class="bg-white w-[90%] md:w-[80%] mx-auto p-6 md:p-10 rounded-xl shadow-xl text-center mt-12"
+      >
+        <div class="max-w-2xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-indigo-600 mb-6 border-b-4 border-indigo-600 inline-block pb-3"
+          >
+            Register Your Team
+          </h2>
+          <p class="mb-6 text-md md:text-lg text-gray-900 leading-relaxed">
+            Ready to take on the challenge? Register your team today and compete
+            for the top spot!
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScCLETJ_bO-1WDxD7VqKIyZJnzXH-XRf_qJMUB4Ioy_7_61Sw/viewform?usp=sf_link"
+            class="inline-block bg-yellow-500 text-white py-4 px-8 rounded-full shadow-lg text-md md:text-lg font-semibold tracking-wide hover:bg-yellow-600 hover:scale-105 transition-transform duration-300 ease-in-out"
+          >
+            Register Now
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Mentor Section -->
+    <section
+      id="mentors"
+      class="w-[90%] md:w-[80%] mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl mt-12"
+    >
+      <h2
+        class="text-3xl md:text-4xl font-bold text-indigo-600 text-center border-b-4 border-indigo-500 pb-4"
+      >
+        Meet Our Mentors and Coordinators
+      </h2>
+      <div
+        class="flex-col lg:flex-row md:flex-row sm:flex-col flex items-center justify-center space-x-0 sm:space-x-0 md:space-x-4 lg:space-x-4 space-y-4 sm:space-y-4 md:space-y-0 lg:space-y-0 mt-10"
+      >
+        <!-- Mentor -->
+        <div
+          class="bg-gray-100 p-6 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300"
+        >
+          <img
+            src="./static/Deepak_kourav.png"
+            alt="Dr. Deepak Kourav"
+            class="w-32 h-32 mx-auto rounded-full object-cover object-top"
+          />
+          <h3 class="text-2xl font-semibold text-indigo-700 mt-4">
+            Mentor of Club
+          </h3>
+          <p class="text-lg mt-4">Dr. Deepak Kourav</p>
+        </div>
+
+        <!-- Co-Mentor -->
+        <div
+          class="bg-gray-100 p-6 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300"
+        >
+          <img
+            src="./static/Dheeraj_kuma.jpeg"
+            alt="Dr. Dheeraj Kumar"
+            class="w-32 h-32 mx-auto rounded-full object-cover object-top"
+          />
+          <h3 class="text-2xl font-semibold text-indigo-700 mt-4">
+            Co-Mentor of Club
+          </h3>
+          <p class="text-lg mt-4">Dr. Dheeraj Kumar</p>
+        </div>
+      </div>
+      <div
+        class="flex-col lg:flex-row md:flex-row sm:flex-col flex items-center justify-center space-x-0 sm:space-x-0 md:space-x-4 lg:space-x-4 space-y-4 sm:space-y-4 md:space-y-0 lg:space-y-0 mt-10"
+      >
+        <!-- President -->
+        <div
+          class="bg-gray-100 p-6 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300"
+        >
+          <img
+            src="./static/Shweta_chourasiya.jpeg"
+            alt="Shweta Chourasiya"
+            class="w-32 h-32 mx-auto rounded-full object-cover object-top"
+          />
+          <h3 class="text-2xl font-semibold text-indigo-700 mt-4">
+            President of Club
+          </h3>
+          <p class="text-lg mt-4">Shweta Chourasiya</p>
+          <p class="text-gray-600">ECE Branch</p>
+        </div>
+
+        <!-- Secretary -->
+        <div
+          class="bg-gray-100 p-6 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300"
+        >
+          <img
+            src="./static/mahak_rajput.jpeg"
+            alt="Mahak Rajput"
+            class="w-32 h-32 mx-auto rounded-full object-cover object-top"
+          />
+          <h3 class="text-2xl font-semibold text-indigo-700 mt-4">
+            Secretary of Club
+          </h3>
+          <p class="text-lg mt-4">Mahak Rajput</p>
+          <p class="text-gray-600">ECE Branch</p>
+        </div>
+        <!-- Event Coordinator -->
+        <div
+          class="bg-gray-100 p-6 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300"
+        >
+          <img
+            src="./static/Sandeep_Singh.png"
+            alt="Sandeep Singh Kushwaha"
+            class="w-32 h-32 mx-auto rounded-full object-cover object-top bg-white"
+          />
+          <h3 class="text-2xl font-semibold text-indigo-700 mt-4">
+            Event Coordinator
+          </h3>
+          <p class="text-lg mt-4">Sandeep Singh Kushwaha</p>
+          <p class="text-gray-600">ECE Branch</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Head Coordinators Section -->
+<section id="head-coordinators" class="w-[80%] mx-auto bg-gray-100 p-8 rounded-lg shadow-lg mt-10">
+  <h2 class="text-4xl font-bold text-indigo-600 text-center border-b-4 border-indigo-500 pb-4">
+    Head Coordinators
+  </h2>
+  <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-lg text-gray-700">
+    <li>1. Abhishek Rajak</li>
+    <li>2. Aman Raghuwanshi</li>
+    <li>3. Atul Yadav</li>
+    <li>4. Hemal Sahu</li>
+    <li>5. Mohit Sonpure</li>
+    <li>6. Piyush Pandey</li>
+    <li>7. Prachi Lodhi</li>
+    <li>8. Ranjna Kashyap</li>
+    <li>9. Rahul Dhakad</li>
+    <li>10. Sonu Lodha</li>
+  </ul>
+</section>
+
+<!-- Volunteers Section -->
+<section id="volunteers" class="w-[80%] mx-auto bg-white p-8 rounded-lg shadow-lg mt-10">
+  <h2 class="text-4xl font-bold text-indigo-600 text-center border-b-4 border-indigo-500 pb-4">
+    Volunteers
+  </h2>
+  <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-lg text-gray-700">
+    <li>2. Aman Sahu</li>
+    <li>4. Bhumanideen</li>
+    <li>5. Deepali</li>
+    <li>6. Devanshu</li>
+    <li>7. Durgesh Lodha</li>
+    <li>8. Mohit Sahu</li>
+    <li>9. Mahak Jatav</li>
+    <li>10. Rahul Lodha</li>
+    <li>11. Ritu</li>
+    <li>12. Bhumanideen Kushwaha</li>
+    <li>13. Neetesh Dhakad</li>
+    <li>14. Mohit Suryawanshi</li>
+    <li>15. Rani</li>
+    <li>16. Sonam</li>
+    <li>17. Mohit Sahu</li>
+    <li>18. Devanshu Purkait</li>
+    <li>19. Vaidehi Tiwari</li>
+    <li>20. Vivek Yadav</li>
+  </ul>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-8 mt-12">
+      <div class="container mx-auto text-center space-y-6">
+        <!-- Logo or Image Section -->
+        <div
+          class="w-full flex flex-col sm:flex-row justify-center items-center sm:space-x-4 space-y-4 sm:space-y-0"
+        >
+          <img
+            src="./static/bgibanner.jpeg"
+            alt="Quiz Competition Banner"
+            class="w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 rounded-lg shadow-lg hover:opacity-90 transition-opacity duration-300"
+          />
+          <img
+            src="./static/bgbanner2.jpg"
+            alt="ESTD Banner"
+            class="w-3/4 sm:w-3/4 md:w-[310px] lg:w-[330px] rounded-lg shadow-lg hover:opacity-90 transition-opacity duration-300"
+          />
+          <img
+            src="./static/ESTD.jpeg"
+            alt="ESTD Banner"
+            class="w-3/4 sm:w-1/5 md:w-1/5 lg:w-1/6 rounded-lg shadow-lg hover:opacity-90 transition-opacity duration-300"
+          />
+        </div>
+
+        <!-- Text Content -->
+        <p class="text-lg font-medium">
+          &copy; 2024 Quiz Competition. All Rights Reserved.
+        </p>
+
+        <!-- Social Media Links (Optional) -->
+        <div class="flex justify-center space-x-6">
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <!-- Footer Links (Optional) -->
+        <div class="flex justify-center space-x-4 text-sm">
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+            >Privacy Policy</a
+          >
+          <span>|</span>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+            >Terms of Service</a
+          >
+          <span>|</span>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition-colors duration-300"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Get video element and play/pause icon
+      const video = document.getElementById("eventVideo");
+      const overlay = document.getElementById("videoOverlay");
+      const playPauseIcon = document.getElementById("playPauseIcon");
+
+      // Function to toggle play/pause
+      function togglePlayPause() {
+        if (video.paused) {
+          video.play();
+          playPauseIcon.classList.remove("bx-play-circle");
+          playPauseIcon.classList.add("bx-pause-circle");
+          overlay.style.opacity = 0; // Hide the overlay when the video plays
+        } else {
+          video.pause();
+          playPauseIcon.classList.remove("bx-pause-circle");
+          playPauseIcon.classList.add("bx-play-circle");
+          overlay.style.opacity = 1; // Show the overlay when the video pauses
+        }
+      }
+
+      // Event listener to toggle play/pause when overlay is clicked
+      overlay.addEventListener("click", togglePlayPause);
+
+      // Hide overlay when video is playing
+      video.addEventListener("play", () => {
+        overlay.style.opacity = 0;
+      });
+
+      // Show overlay when video is paused
+      video.addEventListener("pause", () => {
+        overlay.style.opacity = 1;
+      });
+
+      // Ensure the overlay shows when the video ends
+      video.addEventListener("ended", () => {
+        playPauseIcon.classList.remove("bx-pause-circle");
+        playPauseIcon.classList.add("bx-play-circle");
+        overlay.style.opacity = 1;
+      });
+
+      // JavaScript to toggle mobile menu
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
